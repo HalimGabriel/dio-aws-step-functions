@@ -4,7 +4,7 @@ Repositório desenvolvido para o desafio da **Formação AWS Cloud Foundations**
 
 ## O que é o AWS Step Functions?
 
-O **AWS Step Functions** é um serviço de orquestração da AWS que permite criar fluxos de trabalho (workflows) compostos por diferentes etapas. Esses fluxos são definidos por **State Machines**, que coordenam serviços da AWS, funções Lambda e outras tarefas de forma visual, escalável e sem a necessidade de gerenciar servidores.
+O **AWS Step Functions** é um serviço de orquestração da AWS que permite criar fluxos de trabalho (workflows) compostos por diferentes etapas. Esses fluxos são definidos por **State Machines**, que organizam as etapas e transições de um processo de forma visual e escalável.
 
 ## Conceitos aprendidos
 
@@ -14,37 +14,44 @@ O **AWS Step Functions** é um serviço de orquestração da AWS que permite cri
 
 ### Estados (States)
 
-Durante o laboratório foram utilizados e estudados os principais tipos de estados:
+O AWS Step Functions possui diferentes tipos de estados que podem ser utilizados para construir workflows.
+
+Durante este laboratório, foram utilizados:
 
 * **Pass:** encaminha dados para o próximo estado sem realizar processamento.
 * **Wait:** pausa a execução do workflow por um período definido.
-* **Task:** executa uma tarefa, como chamar uma função AWS Lambda.
-* **Choice:** cria decisões condicionais dentro do fluxo.
 * **Succeed:** encerra o workflow com sucesso.
-* **Fail:** encerra o workflow indicando falha.
+
+Outros tipos de estados disponíveis incluem:
+
+* **Task:** executa uma tarefa, podendo realizar integrações com outros serviços da AWS.
+* **Choice:** permite criar decisões condicionais dentro do fluxo.
+* **Fail:** encerra o workflow indicando uma falha.
 
 ## Workflow criado no laboratório
 
-O workflow desenvolvido possui uma estrutura simples para demonstrar o funcionamento das State Machines.
+O workflow desenvolvido possui uma estrutura simples para demonstrar o funcionamento de uma State Machine.
 
-Fluxo da execução:
+### Fluxo da execução
 
 1. **MensagemInicial** – Estado `Pass` que cria uma mensagem de saída.
 2. **Esperar** – Estado `Wait` que pausa a execução por alguns segundos.
 3. **Finalizado** – Estado `Succeed` que finaliza o workflow com sucesso.
 
-Esse fluxo demonstra a criação, execução e conclusão de uma State Machine utilizando apenas recursos do AWS Step Functions.
+Esse fluxo demonstra a criação, execução e conclusão de uma State Machine utilizando o AWS Step Functions.
 
 ## Benefícios do AWS Step Functions
 
 * Automatização de processos.
-* Orquestração de múltiplos serviços da AWS.
-* Execução de workflows serverless.
-* Tratamento de erros com mecanismos de Retry e Catch.
-* Monitoramento completo do histórico de execução.
-* Escalabilidade automática.
+* Orquestração de diferentes etapas de um workflow.
+* Criação de processos serverless.
+* Tratamento de erros e controle de fluxo.
+* Acompanhamento das execuções.
+* Visualização do histórico de eventos.
 
 ## Casos de uso
+
+O AWS Step Functions pode ser utilizado em diferentes cenários, como:
 
 * Processamento de pedidos.
 * Pipelines de ETL e processamento de dados.
@@ -57,9 +64,11 @@ Esse fluxo demonstra a criação, execução e conclusão de uma State Machine u
 Durante a prática foram realizadas as seguintes etapas:
 
 * Criação de uma State Machine do zero.
-* Configuração de um workflow no editor do Step Functions.
+* Configuração de um workflow utilizando o editor do Step Functions.
+* Definição dos estados `Pass`, `Wait` e `Succeed`.
 * Execução da State Machine pelo console da AWS.
-* Visualização do diagrama de execução.
+* Visualização do diagrama do workflow.
+* Acompanhamento da execução.
 * Consulta ao histórico de eventos da execução.
 
 ## Estrutura do repositório
@@ -76,32 +85,6 @@ Durante a prática foram realizadas as seguintes etapas:
  ┗ 📄 README.md
 ```
 
-## Capturas de tela
-
-### Tela inicial do AWS Step Functions
-
-> Inserir imagem em `images/home-step-functions.png`.
-
-### Criação da State Machine
-
-> Inserir imagem em `images/create-state-machine.png`.
-
-### Editor do Workflow
-
-> Inserir imagem em `images/workflow-editor.png`.
-
-### Diagrama da State Machine
-
-> Inserir imagem em `images/workflow-diagram.png`.
-
-### Execução concluída
-
-> Inserir imagem em `images/execution-success.png`.
-
-### Histórico da execução
-
-> Inserir imagem em `images/execution-history.png`.
-
 ## Tecnologias utilizadas
 
 * AWS Step Functions
@@ -111,8 +94,12 @@ Durante a prática foram realizadas as seguintes etapas:
 
 ## Aprendizados
 
-Este desafio permitiu compreender como o AWS Step Functions organiza processos automatizados por meio de máquinas de estado, facilitando a criação de workflows escaláveis, monitoráveis e integrados com outros serviços da AWS. Além disso, foi possível acompanhar toda a execução do fluxo pelo console da AWS e entender como cada estado participa do processo.
+Este desafio permitiu compreender como o AWS Step Functions organiza processos automatizados por meio de máquinas de estado. Durante a prática, foi possível criar uma State Machine, configurar diferentes estados, executar o workflow e acompanhar cada etapa de sua execução pelo console da AWS.
+
+Também foi possível compreender como os estados podem ser utilizados para controlar o fluxo de um processo e como o histórico de eventos permite acompanhar o comportamento da execução.
 
 ## Conclusão
 
-O AWS Step Functions é uma ferramenta essencial para orquestração de aplicações serverless e automação de processos na nuvem. Com ele é possível construir workflows claros, reutilizáveis e fáceis de monitorar, reduzindo a complexidade de integrações entre diferentes serviços da AWS.
+O AWS Step Functions permite criar e gerenciar workflows compostos por diferentes etapas, facilitando a organização e a automação de processos na AWS.
+
+A prática realizada neste laboratório proporcionou uma introdução à criação de State Machines, configuração de estados, execução de workflows e acompanhamento dos resultados através do console da AWS.
