@@ -105,8 +105,6 @@ Durante a prática foram realizadas as seguintes etapas:
 ## Tecnologias utilizadas
 
 * AWS Step Functions
-* AWS Lambda (conceito de integração)
-* Amazon CloudWatch (monitoramento das execuções)
 * Git
 * GitHub
 * Markdown
